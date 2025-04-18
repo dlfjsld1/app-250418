@@ -41,5 +41,6 @@ yarn-error.log*
 next-env.d.ts
 
 # custom
-src/lib/backend/apiV1/schema.d.ts
-/src/lib/backend/apiV1/schema.d.ts
+# vercel 배포를 위해 필요해 주석처리
+# src/lib/backend/apiV1/schema.d.ts
+# /src/lib/backend/apiV1/schema.d.ts
