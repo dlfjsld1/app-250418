@@ -1,7 +1,7 @@
 package com.example.upload.global.app
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import lombok.SneakyThrows
+
 import org.apache.tika.Tika
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
@@ -18,16 +18,16 @@ class AppConfig {
         private lateinit var environment: Environment
         private lateinit var siteBackUrl: String
         private lateinit var siteFrontUrl: String
-        private lateinit var domain: String
+        private lateinit var domain:String
         private lateinit var springServletMultipartMaxFileSize: String
         private lateinit var springServletMultipartMaxRequestSize: String
         private lateinit var tika: Tika
         private var resourcesSampleDirPath: String? = null
-        
+
         fun getObjectMapper(): ObjectMapper = objectMapper
-        
+
         fun getGenFileDirPath(): String = genFileDirPath
-        
+
         fun getSiteBackUrl(): String = siteBackUrl
 
         fun getSiteFrontUrl(): String = siteFrontUrl
@@ -35,13 +35,13 @@ class AppConfig {
         fun getDomain(): String = domain
 
         fun getSpringServletMultipartMaxFileSize(): String = springServletMultipartMaxFileSize
-        
+
         fun getSpringServletMultipartMaxRequestSize(): String = springServletMultipartMaxRequestSize
 
-        
+
         fun getTempDirPath(): String = System.getProperty("java.io.tmpdir")
 
-        
+
         fun getTika(): Tika = tika
 
 
@@ -58,19 +58,19 @@ class AppConfig {
 
             return resourcesSampleDirPath!!
         }
-        
+
         val isNotProd: Boolean
             get() = !isProd
 
-        
+
         val isProd: Boolean
             get() = environment.matchesProfiles("prod")
 
-        
+
         val isDev: Boolean
             get() = environment.matchesProfiles("dev")
 
-        
+
         val isTest: Boolean
             get() = environment.matchesProfiles("test")
 

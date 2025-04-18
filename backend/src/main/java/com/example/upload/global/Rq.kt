@@ -2,7 +2,7 @@ package com.example.upload.global
 
 import com.example.upload.domain.member.member.entity.Member
 import com.example.upload.domain.member.member.service.MemberService
-import com.example.upload.global.AppConfig
+import com.example.upload.global.app.AppConfig
 import com.example.upload.global.exception.ServiceException
 import com.example.upload.global.security.SecurityUser
 import jakarta.servlet.http.Cookie
@@ -68,7 +68,7 @@ class Rq(
     fun addCookie(name: String?, value: String?) {
         Cookie(name, value)
             .apply {
-                domain = cookieDomain() // app2.gupen.store
+                domain = cookieDomain() // app4.qwas.shop
                 path = "/"
                 isHttpOnly = true
                 secure = true
@@ -102,4 +102,3 @@ class Rq(
 
     val isLogin: Boolean
         get() = runCatching { actor }.isSuccess
-}
