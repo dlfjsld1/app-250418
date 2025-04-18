@@ -60,7 +60,7 @@ class Rq(
     private fun cookieDomain(): String {
         val domain = AppConfig.getDomain()
 
-        if(domain == "localhost") return "localhost"
+        if (domain == "localhost") return "localhost"
 
         return ".$domain"
     }
@@ -102,3 +102,4 @@ class Rq(
 
     val isLogin: Boolean
         get() = runCatching { actor }.isSuccess
+}
