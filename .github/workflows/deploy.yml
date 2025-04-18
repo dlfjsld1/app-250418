@@ -8,7 +8,7 @@ on:
       - 'frontend/src/**'
       - 'backend/build.gradle.kts'
       - 'backend/settings.gradle.kts'
-      - 'Dockerfile'
+      - 'backend/Dockerfile'
 #      - 'infra/main.tf'
 #      - 'infra/variable.tf'
     branches:
