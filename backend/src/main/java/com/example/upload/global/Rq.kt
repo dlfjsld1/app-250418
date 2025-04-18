@@ -56,10 +56,18 @@ class Rq(
         return request.cookies?.firstOrNull { it.name == name }?.value
     }
 
+    private fun cookieDomain(): String {
+        val domain = AppConfig.getDomain()
+
+        if(domain == "localhost") return "localhost"
+
+        return ".$domain"
+    }
+
     fun addCookie(name: String?, value: String?) {
         Cookie(name, value)
             .apply {
-                domain = "localhost"
+                domain = cookieDomain() // app2.gupen.store
                 path = "/"
                 isHttpOnly = true
                 secure = true
@@ -78,7 +86,7 @@ class Rq(
 
         Cookie(name, null)
             .apply {
-                domain = "localhost"
+                domain = cookieDomain()
                 path = "/"
                 isHttpOnly = true
                 secure = true
