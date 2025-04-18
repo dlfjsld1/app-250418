@@ -71,6 +71,10 @@ springdoc:
 
 
 custom:
+  prod:
+    domain: app2.gupen.store
+    backUrl: "https://api.${custom.prod.domain}"
+    frontUrl: "https://www.${custom.prod.domain}"
   dev:
     domain: localhost
     backUrl: "http://${custom.dev.domain}:${server.port}"
