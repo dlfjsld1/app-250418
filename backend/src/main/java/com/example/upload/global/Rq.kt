@@ -2,6 +2,7 @@ package com.example.upload.global
 
 import com.example.upload.domain.member.member.entity.Member
 import com.example.upload.domain.member.member.service.MemberService
+import com.example.upload.global.AppConfig
 import com.example.upload.global.exception.ServiceException
 import com.example.upload.global.security.SecurityUser
 import jakarta.servlet.http.Cookie
